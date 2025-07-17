@@ -14,7 +14,6 @@ const loadAllPhones = async (status, searchText) => {
   //   console.log(res);
   const data = await res.json();
   // console.log(data.data);
-
   if (status === true) {
     displayAllPhones(data.data);
   } else {
@@ -61,7 +60,7 @@ const handleShowDetails = async (slug) => {
   // console.log(data.data);
   const modalData = data.data.mainFeatures;
   // console.log(modalData);
-  const {chipSet, displaySize, memory, storage} = modalData;
+  const { chipSet, displaySize, memory, storage } = modalData;
   // console.log(chipSet, displaySize, memory, storage);
 
   const modalContainer = document.getElementById("modal-container");
