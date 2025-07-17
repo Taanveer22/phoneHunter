@@ -253,7 +253,7 @@
 
     <!-- main section start------------------------------------ -->
     <main class="mb-12">
-      <div class="w-full max-w-sm mx-auto">
+      <div class="w-full max-w-6xl mx-auto">
         <div class="flex items-center">
           <input
             id="search-box"
@@ -270,14 +270,11 @@
           </button>
         </div>
 
-
         <!-- all phone show in this container -->
         <div
           id="phones-container"
-          class="flex justify-around items-center flex-wrap"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
         >
-
-        
           <!-- here we showed our spinner -->
           <div id="spinner"></div>
           <!-- here we make our ophone card  -->
@@ -290,8 +287,8 @@
         </div>
 
         <!-- show modal here  -->
-
         <!-- Open the modal using ID.showModal() method -->
+
 
         <div id="modal-container"></div>
       </div>

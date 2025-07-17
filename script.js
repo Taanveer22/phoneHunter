@@ -31,7 +31,7 @@ const displayAllPhones = (phones) => {
     // console.log(brand, phone_name, slug, image);
     const div = document.createElement("div");
     div.innerHTML = `
-        <div class="card bg-gray-400 m-2">
+        <div class="card bg-gray-400 m-5">
             <figure class="px-10 pt-10">
                     <img src="${image}"class="rounded-xl"/>
             </figure>
@@ -58,7 +58,31 @@ const handleShowDetails = async (slug) => {
   );
   // console.log(res);
   const data = await res.json();
-  console.log(data.data);
+  // console.log(data.data);
+  const modalData = data.data.mainFeatures;
+  // console.log(modalData);
+  const {chipSet, displaySize, memory, storage} = modalData;
+  // console.log(chipSet, displaySize, memory, storage);
+
+  const modalContainer = document.getElementById("modal-container");
+  modalContainer.innerHTML = `
+      <dialog id="details_modal" class="modal modal-bottom sm:modal-middle">
+              <div class="modal-box">
+                  <h3 class="text-lg font-bold">${chipSet}</h3>
+                  <p class="py-4">${memory}</p>
+                  <p class="py-4">${storage}</p>
+                  <p class="py-4">${displaySize}</p>
+                  <div class="modal-action">
+                      <form method="dialog">
+                            <button class="btn">Close</button>
+                      </form>
+                  </div>
+              </div>
+      </dialog>
+  `;
+
+  // modal show
+  details_modal.showModal();
 };
 
 // onclick handler for search button
